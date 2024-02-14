@@ -5,13 +5,14 @@ import userRoutes from './routes/user.route.js';
 import authRoutes from './routes/auth.route.js';
 dotenv.config({ path: '../.env' });
 
-mongoose
-  .connect(process.env.MONGO)
+// mongoose
+//   .connect(process.env.MONGO)
+//   .then(() => {
+//     console.log('MongoDb is connected');
+//   })
+  mongoose.connect("mongodb://127.0.0.1:27017/BlogApplication")
   .then(() => {
-    console.log('MongoDb is connected');
-  })
-  .catch((err) => {
-    console.log(err);
+    console.log("Database is succefully connected");
   });
   
 const app = express();
