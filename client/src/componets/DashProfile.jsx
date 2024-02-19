@@ -27,6 +27,8 @@ export default function DashProfile() {
       setImageFileUrl(URL.createObjectURL(file));
     }
   };
+
+  console.log(currentUser.profilePicture)
   useEffect(() => {
     if (imageFile) {
       uploadImage();
